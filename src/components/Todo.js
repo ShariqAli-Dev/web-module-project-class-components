@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import "./Todo.css";
 class Todo extends Component {
   render() {
     return (
       <>
-        <p>I am a test paragraph in the todo comopnent</p>
+        <p className={this.props.todoItem.completed ? "todo-item completed" : "todo-item"}>{this.props.todoItem.task}</p>
       </>
     );
   }

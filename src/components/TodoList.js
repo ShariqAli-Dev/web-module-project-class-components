@@ -14,8 +14,6 @@ class TodoList extends Component {
             </>
           );
         })}
-
-        <p>I am a test paragraph for TodoList component</p>
       </>
     );
   }

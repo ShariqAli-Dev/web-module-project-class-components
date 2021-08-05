@@ -35,8 +35,6 @@ class App extends React.Component {
         <h1>Todo List: MVP</h1>
         <TodoList todoData={this.state.todoData} />
         <TodoForm />
-        {/* todolistdata.map, render component */}
-        {/* todo list form */}
       </>
     );
   }
