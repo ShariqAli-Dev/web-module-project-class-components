@@ -1,13 +1,5 @@
 import React, { Component } from "react";
 class Todo extends Component {
-  constructor() {
-    super(
-      (this.state = {
-        //random state
-      })
-    );
-  }
-
   render() {
     return (
       <>
