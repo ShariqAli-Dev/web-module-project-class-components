@@ -29,12 +29,28 @@ class App extends React.Component {
     };
   }
 
+  addItem = (newItem) => {
+    console.log("I am adding a new item", newItem);
+
+    this.setState({
+      ...this.state,
+      todoData: [
+        ...this.state.todoData,
+        {
+          task: newItem,
+          id: Date.now(),
+          completed: false,
+        },
+      ],
+    });
+  };
+
   render() {
     return (
       <>
         <h1>Todo List: MVP</h1>
         <TodoList todoData={this.state.todoData} />
-        <TodoForm />
+        <TodoForm addItem={this.addItem} />
       </>
     );
   }
