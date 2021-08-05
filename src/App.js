@@ -1,5 +1,5 @@
 import React from "react";
-
+// import todolist data
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -7,9 +7,11 @@ class App extends React.Component {
   // initial commit
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-      </div>
+      <>
+        <h1>Todo List: MVP</h1>
+        {/* todolistdata.map, render component */}
+        {/* todo list form */}
+      </>
     );
   }
 }
