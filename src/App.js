@@ -28,6 +28,27 @@ class App extends React.Component {
       todoData: todoData,
     };
   }
+  // need to be able to toggle completed
+  // need to be able to clear completed on every item and restart
+
+  toggleCompleted = (taskId) => {
+    console.log("Toggling completed: ", taskId);
+    const updatedTodoData = this.state.todoData.map((task) => {
+      if (task.id === taskId) {
+        return {
+          ...task,
+          completed: !task.completed,
+        };
+      } else {
+        return task;
+      }
+    });
+
+    this.setState({
+      ...this.state,
+      todoData: updatedTodoData,
+    });
+  };
 
   addItem = (newItem) => {
     console.log("I am adding a new item", newItem);
@@ -49,7 +70,7 @@ class App extends React.Component {
     return (
       <>
         <h1>Todo List: MVP</h1>
-        <TodoList todoData={this.state.todoData} />
+        <TodoList toggleCompleted={this.toggleCompleted} todoData={this.state.todoData} />
         <TodoForm addItem={this.addItem} />
       </>
     );

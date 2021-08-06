@@ -10,7 +10,7 @@ class TodoList extends Component {
         {this.props.todoData.map((item) => {
           return (
             <>
-              <Todo key={item.id} todoItem={item} />
+              <Todo toggleCompleted={this.props.toggleCompleted} key={item.id} todoItem={item} />
             </>
           );
         })}
