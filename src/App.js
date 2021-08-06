@@ -32,7 +32,6 @@ class App extends React.Component {
   // need to be able to clear completed on every item and restart
 
   toggleCompleted = (taskId) => {
-    console.log("Toggling completed: ", taskId);
     const updatedTodoData = this.state.todoData.map((task) => {
       if (task.id === taskId) {
         return {
@@ -51,8 +50,6 @@ class App extends React.Component {
   };
 
   addItem = (newItem) => {
-    console.log("I am adding a new item", newItem);
-
     this.setState({
       ...this.state,
       todoData: [
@@ -66,12 +63,19 @@ class App extends React.Component {
     });
   };
 
+  clearCompleted = () => {
+    this.setState({
+      ...this.state,
+      todoData: this.state.todoData.filter((task) => !task.completed),
+    });
+  };
+
   render() {
     return (
       <>
         <h1>Todo List: MVP</h1>
         <TodoList toggleCompleted={this.toggleCompleted} todoData={this.state.todoData} />
-        <TodoForm addItem={this.addItem} />
+        <TodoForm clearCompleted={this.clearCompleted} addItem={this.addItem} />
       </>
     );
   }
