@@ -1,0 +1,9 @@
+.todo-item {
+  font-size: 1.5rem;
+  line-height: 10%;
+  font-weight: lighter;
+}
+
+.completed {
+  text-decoration: line-through;
+}
